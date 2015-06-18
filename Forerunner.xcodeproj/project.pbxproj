@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085C30971B324FAA007AA4AD /* SelectTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C30961B324FAA007AA4AD /* SelectTagViewController.swift */; };
 		08B0FAAA1B30B55000AE1F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0FAA91B30B55000AE1F87 /* AppDelegate.swift */; };
 		08B0FAAC1B30B55000AE1F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0FAAB1B30B55000AE1F87 /* ViewController.swift */; };
 		08B0FAAF1B30B55000AE1F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B0FAAD1B30B55000AE1F87 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		085C30961B324FAA007AA4AD /* SelectTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTagViewController.swift; sourceTree = "<group>"; };
 		08B0FAA41B30B55000AE1F87 /* Forerunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forerunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B0FAA81B30B55000AE1F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08B0FAA91B30B55000AE1F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				08B0FAA91B30B55000AE1F87 /* AppDelegate.swift */,
 				08B0FAAB1B30B55000AE1F87 /* ViewController.swift */,
 				08B0FAC91B30CF8500AE1F87 /* SelectDistanceViewController.swift */,
+				085C30961B324FAA007AA4AD /* SelectTagViewController.swift */,
 				08B0FAAD1B30B55000AE1F87 /* Main.storyboard */,
 				08B0FAB01B30B55000AE1F87 /* Images.xcassets */,
 				08B0FAB21B30B55000AE1F87 /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 				08B0FAAC1B30B55000AE1F87 /* ViewController.swift in Sources */,
 				08B0FACA1B30CF8500AE1F87 /* SelectDistanceViewController.swift in Sources */,
 				08B0FAAA1B30B55000AE1F87 /* AppDelegate.swift in Sources */,
+				085C30971B324FAA007AA4AD /* SelectTagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

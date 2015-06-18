@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DE9571C6-BB24-48A1-A40F-D1C645D96F8A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Forerunner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>402E322FB7C78E1F0ED263A5A17D086C07A3E141</key>
+		<string>github.com:kbastien/Forerunner.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Forerunner.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>402E322FB7C78E1F0ED263A5A17D086C07A3E141</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:kbastien/Forerunner.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>402E322FB7C78E1F0ED263A5A17D086C07A3E141</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>402E322FB7C78E1F0ED263A5A17D086C07A3E141</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Forerunner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
