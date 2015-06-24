@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		085C30971B324FAA007AA4AD /* SelectTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C30961B324FAA007AA4AD /* SelectTagViewController.swift */; };
+		085C30991B333472007AA4AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085C30981B333472007AA4AD /* CoreLocation.framework */; };
+		085C309B1B334481007AA4AD /* GeneratedRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C309A1B334481007AA4AD /* GeneratedRouteViewController.swift */; };
+		085C309D1B334A7A007AA4AD /* MyGlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C309C1B334A7A007AA4AD /* MyGlobalVariables.swift */; };
 		08B0FAAA1B30B55000AE1F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0FAA91B30B55000AE1F87 /* AppDelegate.swift */; };
 		08B0FAAC1B30B55000AE1F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0FAAB1B30B55000AE1F87 /* ViewController.swift */; };
 		08B0FAAF1B30B55000AE1F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08B0FAAD1B30B55000AE1F87 /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		085C30961B324FAA007AA4AD /* SelectTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTagViewController.swift; sourceTree = "<group>"; };
+		085C30981B333472007AA4AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		085C309A1B334481007AA4AD /* GeneratedRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedRouteViewController.swift; sourceTree = "<group>"; };
+		085C309C1B334A7A007AA4AD /* MyGlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGlobalVariables.swift; sourceTree = "<group>"; };
 		08B0FAA41B30B55000AE1F87 /* Forerunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forerunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B0FAA81B30B55000AE1F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08B0FAA91B30B55000AE1F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085C30991B333472007AA4AD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +70,7 @@
 		08B0FA9B1B30B55000AE1F87 = {
 			isa = PBXGroup;
 			children = (
+				085C30981B333472007AA4AD /* CoreLocation.framework */,
 				08B0FAA61B30B55000AE1F87 /* Forerunner */,
 				08B0FABC1B30B55000AE1F87 /* ForerunnerTests */,
 				08B0FAA51B30B55000AE1F87 /* Products */,
@@ -83,7 +91,9 @@
 			children = (
 				08B0FAA91B30B55000AE1F87 /* AppDelegate.swift */,
 				08B0FAAB1B30B55000AE1F87 /* ViewController.swift */,
+				085C309C1B334A7A007AA4AD /* MyGlobalVariables.swift */,
 				08B0FAC91B30CF8500AE1F87 /* SelectDistanceViewController.swift */,
+				085C309A1B334481007AA4AD /* GeneratedRouteViewController.swift */,
 				085C30961B324FAA007AA4AD /* SelectTagViewController.swift */,
 				08B0FAAD1B30B55000AE1F87 /* Main.storyboard */,
 				08B0FAB01B30B55000AE1F87 /* Images.xcassets */,
@@ -219,6 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				08B0FAAC1B30B55000AE1F87 /* ViewController.swift in Sources */,
+				085C309B1B334481007AA4AD /* GeneratedRouteViewController.swift in Sources */,
+				085C309D1B334A7A007AA4AD /* MyGlobalVariables.swift in Sources */,
 				08B0FACA1B30CF8500AE1F87 /* SelectDistanceViewController.swift in Sources */,
 				08B0FAAA1B30B55000AE1F87 /* AppDelegate.swift in Sources */,
 				085C30971B324FAA007AA4AD /* SelectTagViewController.swift in Sources */,

@@ -16,6 +16,10 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
     let pickerViewRows = 10000
     let locationManager = CLLocationManager()
     
+    struct PickerSelected {
+        static var selectedNumber:Int?
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +35,6 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     func valueForRow(row: Int) -> Int {
         // the rows repeat every `pickerViewData.count` items
@@ -40,6 +43,7 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
     
     func rowForValue(value: Int) -> Int? {
         let pickerViewMiddle = ((pickerViewRows / pickerViewData.count) / 2) * pickerViewData.count
+        NSLog("VALUE: \(value)")
         if let valueIndex = find(pickerViewData, value) {
             return pickerViewMiddle + value
         }
@@ -61,8 +65,11 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
     // whenever the picker view comes to rest, we'll jump back to
     // the row with the current value that is closest to the middle
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let pickerViewMiddle = ((pickerViewRows / pickerViewData.count) / 2) * pickerViewData.count
-        let newRow = pickerViewMiddle + (row % pickerViewData.count)
+        PickerSelected.selectedNumber = nil
+        //let pickerViewMiddle = ((pickerViewRows / pickerViewData.count) / 2) * pickerViewData.count
+        //rounds up row
+        let newRow = (row % pickerViewData.count)
+        PickerSelected.selectedNumber = pickerViewData[pickerView.selectedRowInComponent(0)]
         pickerView.selectRow(newRow, inComponent: 0, animated: false)
         println("Resetting row to \(newRow)")
     }
@@ -73,7 +80,6 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
                 println("Error: " + error.localizedDescription)
                 return
             }
-            
             if placemarks.count > 0 {
                 let pm = placemarks[0] as! CLPlacemark
                 self.displayLocationInfo(pm)
@@ -92,6 +98,13 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println("Error: " + error.localizedDescription)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "getToSelectTagsSegue") {
+            var passedValue = segue.destinationViewController as! SelectTagViewController;
+            passedValue.toPass = PickerSelected.selectedNumber   
+        }
     }
 
 }
