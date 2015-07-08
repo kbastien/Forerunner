@@ -1,0 +1,6 @@
+[submodule "das-quadrat"]
+	path = das-quadrat
+	url = git@github.com:Constantine-Fry/das-quadrat.git
+[submodule "Alamofire"]
+	path = Alamofire
+	url = https://github.com/Alamofire/Alamofire.git

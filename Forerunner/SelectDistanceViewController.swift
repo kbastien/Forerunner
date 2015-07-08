@@ -12,12 +12,18 @@ import CoreLocation
 class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var distancePicker: UIPickerView!
-    let pickerViewData = Array(0...50)
+    let pickerViewData = Array(1...50)
     let pickerViewRows = 10000
     let locationManager = CLLocationManager()
     
     struct PickerSelected {
         static var selectedNumber:Int?
+    }
+    
+    struct LocationInformation {
+        static var lat: CLLocationDegrees = 0.0
+        static var long: CLLocationDegrees = 0.0
+        static var cityState: String?
     }
     
     override func viewDidLoad() {
@@ -71,20 +77,30 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
         let newRow = (row % pickerViewData.count)
         PickerSelected.selectedNumber = pickerViewData[pickerView.selectedRowInComponent(0)]
         pickerView.selectRow(newRow, inComponent: 0, animated: false)
-        println("Resetting row to \(newRow)")
+        print("Resetting row to \(newRow)")
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarks, error) -> Void in
             if error != nil {
-                println("Error: " + error.localizedDescription)
+                print("Error: " + error.localizedDescription)
                 return
             }
             if placemarks.count > 0 {
                 let pm = placemarks[0] as! CLPlacemark
                 self.displayLocationInfo(pm)
+                if let city = pm.addressDictionary["City"] as? NSString {
+                    LocationInformation.cityState = city as String
+                    if let state = pm.addressDictionary["State"] as? NSString {
+                        LocationInformation.cityState = (city as String) + ", " + (state as String)
+                    }
+                }
             }
             
+            let placeArray = placemarks as! [CLPlacemark]
+            let coordinate = manager.location.coordinate
+            LocationInformation.lat = coordinate.latitude
+            LocationInformation.long = coordinate.longitude
         })
     }
     
@@ -96,14 +112,22 @@ class SelectDistanceViewController: UIViewController, UIPickerViewDataSource, UI
         NSLog("Country: \(placemark.country)")
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error: " + error.localizedDescription)
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error: " + error.localizedDescription)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "getToSelectTagsSegue") {
-            var passedValue = segue.destinationViewController as! SelectTagViewController;
-            passedValue.toPass = PickerSelected.selectedNumber   
+            let passedValue = segue.destinationViewController as! SelectTagViewController;
+            passedValue.lat = LocationInformation.lat
+            passedValue.long = LocationInformation.long
+            passedValue.cityState = LocationInformation.cityState
+            if PickerSelected.selectedNumber == nil {
+                passedValue.toPass = 1
+            }
+            else {
+                passedValue.toPass = PickerSelected.selectedNumber
+            }
         }
     }
 
