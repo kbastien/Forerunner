@@ -9,5 +9,7 @@
 import UIKit
 
 class categoryCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var labelCell: UILabel!
+    
 }
