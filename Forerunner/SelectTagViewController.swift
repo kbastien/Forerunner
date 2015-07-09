@@ -47,7 +47,6 @@ class SelectTagViewController: UIViewController, CLLocationManagerDelegate, UICo
     
     private func updateCurrentLocation() {
         locationManager.delegate = self
-        
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
